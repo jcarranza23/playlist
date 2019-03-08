@@ -1,3 +1,18 @@
-<p>
-  songs works!
-</p>
+<div>
+
+  <h2>My song list Service</h2>
+  <ul class="songs">
+    <li *ngFor="let song of songs1">
+      <a href="{{song.url}}" target="_blank">{{song.name}}</a><br>
+      <span>{{song.artist}}</span>
+    </li>
+  </ul>
+<br>
+  <h2>My song list</h2>
+  <ul class="songs">
+    <li *ngFor="let song of songs2">
+      <a href="{{song.url}}" target="_blank">{{song.name}}</a><br>
+      <span>{{song.artist}}</span>
+    </li>
+  </ul>
+</div>
