@@ -9,17 +9,23 @@ import { SongService } from './songs/song.service';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { routing } from './app.routing';
+import { ArtistsComponent } from './artists/artists.component';
+import { ArtistService } from './artists/artist.service';
+
 @NgModule({
   declarations: [
     AppComponent,
-    SongsComponent
+    SongsComponent,
+    ArtistsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule, 
-    HttpClientModule
+    HttpClientModule,
+    routing
   ],
-  providers: [SongService],
+  providers: [SongService, ArtistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
