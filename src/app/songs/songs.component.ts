@@ -11,6 +11,8 @@ export class SongsComponent implements OnInit {
   
   public songs1:Array<object> = null;
   public songs2:Array<object> = null;
+  public songs:Array<any> = null;
+  public song:string = null;
 
   constructor(private songService:SongService) { }
 
@@ -22,6 +24,12 @@ export class SongsComponent implements OnInit {
       name:'Teens like spirit',
       url:'https://www.last.fm/music/Nirvana/_/Smells+Like++Teen+Spirit'
     }];
+  }
+
+  getSongs(){
+    this.songService.searchSong(this.song).then(response => {
+      this.songs = response;
+    });
   }
 
 }
