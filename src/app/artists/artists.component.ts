@@ -21,7 +21,7 @@ export class ArtistsComponent implements OnInit {
   ngOnInit() {
   }
 
-  getArtists(artist){
+  getArtists(){
     this.artistService.searchArtist(this.artist).
       then((response: Array<Artist>) => {
         this.artists = response;

@@ -9,8 +9,11 @@ type Response = {
 }
 
 type Artist = {
-  nombre: string,  
-  url: string
+  image:Array<string>, 
+  bio: {
+      summary:string,
+      content:string
+    }
 }
 
 

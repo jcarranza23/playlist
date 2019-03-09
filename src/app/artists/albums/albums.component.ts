@@ -13,9 +13,9 @@ type Album = {
   styleUrls: ['./albums.component.css']
 })
 export class AlbumsComponent implements OnInit, OnDestroy {
-  private subscription: Subscription = null;
-  private artistName: string = null;
-  private albums:Array<Album> = null;
+  public subscription: Subscription = null;
+  public artistName: string = null;
+  public albums:Array<Album> = null;
 
 
   constructor(
