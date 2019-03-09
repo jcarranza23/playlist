@@ -5,7 +5,7 @@
 </form> 
 <ul>
   <li *ngFor="let artist of artists">
-    <a href="{{artist.url}}">{{artist.name}}</a>
+    <a routerLink="artist/{{artist.name}}">{{artist.name}}</a>
   </li>
 </ul>
 

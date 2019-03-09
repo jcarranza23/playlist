@@ -10,12 +10,10 @@ type Response = {
   }  
 }
 
-
 type Artist = {
   nombre: string,  
   url: string
 }
-
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +34,12 @@ export class ArtistService {
         return response.results.artistmatches.artist;
       })
     ).toPromise();
+  }
+
+  getDetails(artist){
+    const URL = `http://ws.audioscrobbler.com/2.0?method=artist.getInfo&artist=${artist}&api_key=${this.API_KEY}&format=json`;
+    return this.http.get(URL).toPromise();
+       
   }
 
 }
