@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
+import { environment } from '../../environments/environment';
+
 type Response = {
   results: {
     artistmatches : {
@@ -20,13 +22,14 @@ type Artist = {
 })
 export class ArtistService {
 
-  private API_KEY = 'b2347fbc5fc0cd5aaf5a28721195a2b5';
+  private API_KEY = environment.API_KEY;
+  private API_URL = environment.API_URL;
 
   constructor(private http:HttpClient) { }
 
   
   searchArtist(artist){
-    const URL = `http://ws.audioscrobbler.com/2.0?method=artist.search&artist=${artist}&api_key=${this.API_KEY}&format=json`;
+    const URL = `${this.API_URL}method=artist.search&artist=${artist}&api_key=${this.API_KEY}&format=json`;
     return this.http.get<Response>(URL)
     .pipe(
       map(response => {
@@ -37,7 +40,7 @@ export class ArtistService {
   }
 
   getDetails(artist){
-    const URL = `http://ws.audioscrobbler.com/2.0?method=artist.getInfo&artist=${artist}&api_key=${this.API_KEY}&format=json`;
+    const URL = `${this.API_URL}method=artist.getInfo&artist=${artist}&api_key=${this.API_KEY}&format=json`;
     return this.http.get(URL).toPromise();
        
   }
