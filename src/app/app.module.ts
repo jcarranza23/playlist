@@ -14,6 +14,8 @@ import { ArtistsComponent } from './artists/artists.component';
 import { ArtistService } from './artists/artist.service';
 import { ArtistDetailsComponent } from './artists/artist-details/artist-details.component';
 import { AlbumsComponent } from './artists/albums/albums.component';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+         
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { AlbumsComponent } from './artists/albums/albums.component';
     BrowserModule,
     FormsModule, 
     HttpClientModule,
-    routing
+    routing,
+    NgbDropdownModule
   ],
   providers: [SongService, ArtistService],
   bootstrap: [AppComponent]
